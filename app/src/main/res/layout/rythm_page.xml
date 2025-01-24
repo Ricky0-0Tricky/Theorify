@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/page_background"
+    android:padding="16dp"
+    tools:context=".LoginActivity">
+    <!-- TableLayout  e TableRow https://abhiandroid.com/ui/tablelayout#gsc.tab=0 -->
+    <!--
+    https://developer.android.com/guide/fragments/fragmentmanager?hl=pt-br#multiple-back-stacks
+    https://doctrino.ipt.pt/pluginfile.php/168768/mod_resource/content/1/4.%20Fragmentos.pdf -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/rectangle"
+            android:src="@drawable/icon_login"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Blah blah blah"
+            android:textColor="#000000"
+            android:background="@drawable/rectangle"
+            android:textSize="16sp"
+            android:padding="4dp"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
+

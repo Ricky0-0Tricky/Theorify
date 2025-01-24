@@ -8,4 +8,8 @@
     <string name="rg_password_repeat">Repeat Password</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
+    <string name="username_">Username: pessoa</string>
+    <string name="password_">Password: ......</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="sign_out">Sign Out</string>
 </resources>
