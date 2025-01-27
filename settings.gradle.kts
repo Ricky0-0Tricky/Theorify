@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Theorify"
 include(":app")
+ 
