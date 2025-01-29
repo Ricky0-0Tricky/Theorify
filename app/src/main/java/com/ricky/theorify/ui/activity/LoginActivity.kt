@@ -7,7 +7,10 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import com.google.gson.Gson
 import com.ricky.theorify.R
+import com.ricky.theorify.model.APIResult
 import com.ricky.theorify.model.RegisteredUser
 import com.ricky.theorify.retrofit.RetrofitInitializer
 import retrofit2.Call
@@ -33,13 +36,25 @@ class LoginActivity : AppCompatActivity (){
 
         // Evento "onClick" do botão de login
         loginBtn.setOnClickListener{
+            // Desativa o botão
+            manageButton(false)
             // Obtenção dos dados fornecidos
-            val username = usernameInput.text.toString()
-            val password = passwordInput.text.toString()
+            val username = usernameInput.text.trim().toString().replace("\\s".toRegex(), "")
+            val password = passwordInput.text.trim().toString().replace("\\s".toRegex(), "")
             // Verificação se os mesmo estão preenchidos
             if(username.isNotBlank() && password.isNotBlank()){
-                getUser(username,password)
+                // Verificação se a password possui o tamanho mínimo
+                if(password.length > 6){
+                    getUser(username,password)
+                } else {
+                    // Reativa o botão
+                    manageButton(true)
+                    // Aviso ao Utilizador que a palavra-passe não tem um tamanho superior a 6 chars
+                    Toast.makeText(this,"A palavra-passe tem de ter um tamanho superior a 6...", Toast.LENGTH_SHORT).show()
+                }
             } else {
+                // Reativa o botão
+                manageButton(true)
                 Toast.makeText(this,"Por favor, insira um username e respetiva password",Toast.LENGTH_SHORT).show()
             }
         }
@@ -58,11 +73,29 @@ class LoginActivity : AppCompatActivity (){
         call.enqueue(object : Callback<RegisteredUser> {
             override fun onResponse(call: Call<RegisteredUser>,
                                     response: Response<RegisteredUser>) {
-                response?.body()?.let {
-                    // Obtenção do Utilizador na BD
-                    val user : RegisteredUser = it
-                    // Tentativa de Autenticação do Utilizador
-                    verifyUser(password,user);
+                if(response.isSuccessful){
+                    response.body()?.let {
+                        // Obtenção do Utilizador na BD
+                        val user : RegisteredUser = it
+                        // Tentativa de Autenticação do Utilizador
+                        verifyUser(password,user)
+                }
+                } else {
+                    // Parsing da messagem de erro
+                    val errorMessage  = response.errorBody()?.string()?.let { errorBody ->
+                        try {
+                            // Captura do JSON com descrição da mensagem
+                            val gson = Gson()
+                            val errorContents = gson.fromJson(errorBody, APIResult::class.java)
+                            errorContents.result
+                        } catch (e: Exception) {
+                            "Erro inesperado: ${response.code()}"
+                        }
+                    } ?: "Erro inesperado: ${response.code()}"
+                    // Reativa o botão
+                    manageButton(true)
+                    // Aviso ao Utilizador que ocorreu um erro no ato de autenticação (BD)
+                    Toast.makeText(this@LoginActivity, errorMessage, Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -70,6 +103,8 @@ class LoginActivity : AppCompatActivity (){
                 // Limpeza dos Inputs
                 usernameInput.setText("")
                 passwordInput.setText("")
+                // Reativa o botão
+                manageButton(true)
                 // Aviso ao Utilizador que ocorreu um erro no ato de autenticação
                 Toast.makeText(this@LoginActivity,t?.toString(),Toast.LENGTH_SHORT).show()
             }
@@ -81,11 +116,15 @@ class LoginActivity : AppCompatActivity (){
      */
     fun verifyUser(password : String, user : RegisteredUser){
         if(user.Password == password){
+            // Inserção do Utilizador Autenticado no companion object
+            RegisteredUser.currentUser = user
             // Redirecionamento para a Página Principal
-            setContentView(R.layout.rythm_page)
+            goMainPage()
         } else {
+            // Reativa o botão
+            manageButton(true)
             // Aviso ao Utilizador que a password inserida não condiz com a password da conta registada
-            Toast.makeText(this,"Password errada, tente novamente...",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"Password errada, tente novamente...",Toast.LENGTH_LONG).show()
         }
     }
 
@@ -93,7 +132,35 @@ class LoginActivity : AppCompatActivity (){
      * Metodo para trocar para a Página de Registo
      */
     fun goRegister(){
+        // Criação da Nova Atividade
         val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
+        // Limpeza dos Inputs
+        usernameInput.setText("")
+        passwordInput.setText("")
+    }
+
+    /**
+     * Metodo para, após autenticação, redirecionar para Página Principal
+     */
+    fun goMainPage(){
+        // Criação da Nova Atividade
+        val intent = Intent(this, RhythmActivity::class.java)
+        startActivity(intent)
+    }
+
+    /**
+     * Metodo para gerir o estado do botão de login
+     */
+    fun manageButton(state : Boolean) {
+        if (state == true) {
+            loginBtn.isEnabled = true
+            loginBtn.isClickable = true
+            loginBtn.setBackgroundColor(ContextCompat.getColor(loginBtn.context, R.color.white))
+        } else {
+            loginBtn.isEnabled = false
+            loginBtn.isClickable = false
+            loginBtn.setBackgroundColor(ContextCompat.getColor(loginBtn.context, R.color.greyish))
+        }
     }
 }

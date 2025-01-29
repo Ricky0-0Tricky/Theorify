@@ -2,16 +2,15 @@
     <string name="app_name">Theorify</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="password_repeat">Repeat Password</string>
     <string name="rg_username">Username</string>
     <string name="rg_password">Password</string>
-    <string name="rg_password_repeat">Repeat Password</string>
+    <string name="rg_password_repeat">Password de Confirmação</string>
     <string name="login">Login</string>
-    <string name="register">Register</string>
+    <string name="register">Registar</string>
     <string name="username_">Username: pessoa</string>
     <string name="password_">Password: ......</string>
-    <string name="delete_account">Delete Account</string>
-    <string name="sign_out">Sign Out</string>
-    <string name="login_to_register"><u>Não tens conta? Regista-te aqui!</u></string>
-    <string name="register_to_login">Já tens conta? Autentica-te!</string>
+    <string name="delete_account">Apagar Conta</string>
+    <string name="sign_out">Sair</string>
+    <string name="login_to_register">Não tens conta? <u>Regista-te aqui!</u></string>
+    <string name="register_to_login">Já tens conta? <u>Autentica-te!</u></string>
 </resources>

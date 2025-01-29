@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/page_background"
     android:padding="16dp"
-    tools:context=".ui.activity.LoginActivity">
+    tools:context=".ui.activity.RhythmActivity">
     <!-- TableLayout  e TableRow https://abhiandroid.com/ui/tablelayout#gsc.tab=0 -->
     <!--
     https://developer.android.com/guide/fragments/fragmentmanager?hl=pt-br#multiple-back-stacks
@@ -19,7 +19,9 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="@drawable/rectangle"
-            android:src="@drawable/icon_login"/>
+            android:src="@drawable/icon_login"
+            android:id="@+id/firstIcon"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -29,6 +31,7 @@
             android:background="@drawable/rectangle"
             android:textSize="16sp"
             android:padding="4dp"
+            android:id="@+id/firstDescription"
             />
 
     </LinearLayout>
