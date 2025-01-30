@@ -58,4 +58,8 @@
     <string name="conceito_claveAlto">A Clave de Dó é usada principalmente para viola e às vezes para outros instrumentos, como o trombone alto. É chamada de Clave de Dó porque pode ser movida para diferentes posições, marcando a linha que representa Dó.</string>
     <string name="conceito_claveTenor">A Clave de Tenor é outra forma de Clave de Dó e é frequentemente usada para instrumentos como o trombone tenor, o fagote e a faixa superior do violoncelo. A clave também é a Clave de Dó, mas coloca a nota Dó na segunda linha da pauta.</string>
     <string name="conceito_Armadura_chaveGMaior">Indicam quais notas são consistentemente sustenidas ou bemol ao longo de uma peça musical, ajudando a definir sua tonalidade. Por exemplo, se uma armadura de clave tiver um sustenido (Fá sustentido), a música provavelmente será em Sol maior ou Mi menor (Menor Relativa).</string>
+    <string name="password_show_btn">\"\"</string>
+    <string name="username_account">Username:</string>
+    <string name="password_account_hidden">Password: ●●●●●●</string>
+    <string name="password_account_shown">Password:</string>
 </resources>
