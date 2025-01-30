@@ -43,14 +43,14 @@ class LoginActivity : AppCompatActivity (){
             val password = passwordInput.text.trim().toString().replace("\\s".toRegex(), "")
             // Verificação se os mesmo estão preenchidos
             if(username.isNotBlank() && password.isNotBlank()){
-                // Verificação se a password possui o tamanho mínimo
-                if(password.length > 6){
+                // Verificação se a password está entre o limite delimitado
+                if(password.length >= 4 && password.length <= 8){
                     getUser(username,password)
                 } else {
                     // Reativa o botão
                     manageButton(true)
-                    // Aviso ao Utilizador que a palavra-passe não tem um tamanho superior a 6 chars
-                    Toast.makeText(this,"A palavra-passe tem de ter um tamanho superior a 6...", Toast.LENGTH_SHORT).show()
+                    // Aviso ao Utilizador que a palavra-passe não tem um tamanho adequado
+                    Toast.makeText(this,"A palavra-passe tem de ter um tamanho mínimo de 4 e máximo de 8... ", Toast.LENGTH_SHORT).show()
                 }
             } else {
                 // Reativa o botão
@@ -145,7 +145,7 @@ class LoginActivity : AppCompatActivity (){
      */
     fun goMainPage(){
         // Criação da Nova Atividade
-        val intent = Intent(this, RhythmActivity::class.java)
+        val intent = Intent(this, ManageActivity::class.java)
         startActivity(intent)
     }
 

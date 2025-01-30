@@ -16,6 +16,7 @@ class RhythmActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.rhythm_page)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // Captura dos elementos que compõem a página
         firstIcon = findViewById(R.id.firstIcon)
