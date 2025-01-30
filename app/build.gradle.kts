@@ -6,13 +6,15 @@ plugins {
     alias(libs.plugins.kotlin.android)
 }
 
-val localPropertiesFile = rootProject.file("local.properties")
-val localProperties =  Properties()
-localProperties.load(FileInputStream(localPropertiesFile))
-
 android {
     namespace = "com.ricky.theorify"
     compileSdk = 35
+
+    // Para ter acesso ao conteúdo do ficheiro local.properties
+    val file = rootProject.file("local.properties")
+    val properties = Properties()
+    // Carrega o conteúdo para dentro do properties
+    properties.load(FileInputStream(file))
 
     defaultConfig {
         applicationId = "com.ricky.theorify"
@@ -24,10 +26,15 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "API_KEY", localProperties["bearer"].toString())
+        // Estabelece a criação da chave no programa
+        buildConfigField("String", "bearer", properties.getProperty("bearer"))
     }
 
     buildTypes {
+        debug {
+            // Estabelece a criação da chave no programa
+            buildConfigField("String", "bearer", properties.getProperty("bearer"))
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -51,6 +58,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.core)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

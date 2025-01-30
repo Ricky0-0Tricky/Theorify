@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/page_background"
+    android:padding="16dp"
+    tools:context=".ui.activity.NoteActivity">
+    <!-- TableLayout  e TableRow https://abhiandroid.com/ui/tablelayout#gsc.tab=0 -->
+    <!--
+    https://developer.android.com/guide/fragments/fragmentmanager?hl=pt-br#multiple-back-stacks
+    https://doctrino.ipt.pt/pluginfile.php/168768/mod_resource/content/1/4.%20Fragmentos.pdf -->
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nota"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:padding="2dp"
+                android:text="@string/notas"
+                android:textColor="#ffffff"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:layout_gravity="center"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/semibreve"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/rectangle"
+                android:contentDescription="@string/semibreve"
+                android:padding="5dp"
+                android:src="@drawable/semibreve" />
+
+            <TextView
+                android:id="@+id/semibreveDescription"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/rectangle"
+                android:padding="2dp"
+                android:text="@string/conceito_semibreve"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/minima"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/rectangle"
+                android:contentDescription="@string/minima"
+                android:padding="5dp"
+                android:src="@drawable/minima" />
+
+            <TextView
+                android:id="@+id/minimaDescription"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/rectangle"
+                android:padding="2dp"
+                android:text="@string/conceito_minima"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/seminima"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/rectangle"
+                android:contentDescription="@string/seminima"
+                android:padding="5dp"
+                android:src="@drawable/seminima" />
+
+            <TextView
+                android:id="@+id/seminimaDescription"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/rectangle"
+                android:padding="2dp"
+                android:text="@string/conceito_seminima"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/colcheia"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/rectangle"
+                android:contentDescription="@string/colcheia"
+                android:padding="15dp"
+                android:src="@drawable/colcheia" />
+
+            <TextView
+                android:id="@+id/colcheiaDescription"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/rectangle"
+                android:padding="2dp"
+                android:text="@string/conceito_colcheia"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/semicolcheia"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/rectangle"
+                android:contentDescription="@string/semicolcheia"
+                android:padding="5dp"
+                android:src="@drawable/semicolcheia" />
+
+            <TextView
+                android:id="@+id/semicolcheiaDescription"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/rectangle"
+                android:padding="2dp"
+                android:text="@string/conceito_semicolcheia"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/fusa"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/rectangle"
+                android:contentDescription="@string/fusa"
+                android:padding="5dp"
+                android:src="@drawable/fusa" />
+
+            <TextView
+                android:id="@+id/fusaDescription"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle"
+                android:padding="2dp"
+                android:text="@string/conceito_fusa"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/semifusa"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/rectangle"
+                android:contentDescription="@string/semifusa"
+                android:padding="5dp"
+                android:src="@drawable/semifusa" />
+
+            <TextView
+                android:id="@+id/semifusaDescription"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/rectangle"
+                android:padding="2dp"
+                android:text="@string/conceito_semifusa"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/acorde"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/rectangle"
+                android:contentDescription="@string/acorde"
+                android:padding="5dp"
+                android:src="@drawable/acorde" />
+
+            <TextView
+                android:id="@+id/acordeDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle"
+                android:padding="2dp"
+                android:text="@string/conceito_acorde"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/arpeggio"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/rectangle"
+                android:contentDescription="@string/arpeggio"
+                android:padding="5dp"
+                android:src="@drawable/arpeggio" />
+
+            <TextView
+                android:id="@+id/arpeggioDescription"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle"
+                android:padding="2dp"
+                android:text="@string/conceito_arpeggio"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+        </TableRow>
+
+    </TableLayout>
+
+</ScrollView>
+

@@ -27,7 +27,11 @@
         </service>
         <!-- A chave da será escrita no ficheiro 'local.properties'  -->
         <activity
-            android:name=".ui.activity.RhythmActivity"
+            android:name=".ui.activity.ClaveActivity"/>
+        <activity
+            android:name=".ui.activity.PauseActivity"/>
+        <activity
+            android:name=".ui.activity.NoteActivity"
             android:exported="false"/>
         <activity
             android:name=".ui.activity.RegisterActivity"

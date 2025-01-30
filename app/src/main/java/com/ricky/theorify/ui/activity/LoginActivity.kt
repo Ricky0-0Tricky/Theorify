@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.gson.Gson
+import com.ricky.theorify.BuildConfig
 import com.ricky.theorify.R
 import com.ricky.theorify.model.APIResult
 import com.ricky.theorify.model.RegisteredUser
@@ -23,6 +24,7 @@ class LoginActivity : AppCompatActivity (){
     lateinit var passwordInput : EditText
     lateinit var loginBtn : Button
     lateinit var switch_register : TextView
+    val keyApi = BuildConfig.bearer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,7 +71,7 @@ class LoginActivity : AppCompatActivity (){
      * Metodo de Obtenção do User da BD para autenticação do utilizador
      */
     fun getUser(username : String, password : String){
-        val call = RetrofitInitializer().apiService().getUser("",username)
+        val call = RetrofitInitializer().apiService().getUser(keyApi,username)
         call.enqueue(object : Callback<RegisteredUser> {
             override fun onResponse(call: Call<RegisteredUser>,
                                     response: Response<RegisteredUser>) {
@@ -145,7 +147,7 @@ class LoginActivity : AppCompatActivity (){
      */
     fun goMainPage(){
         // Criação da Nova Atividade
-        val intent = Intent(this, RhythmActivity::class.java)
+        val intent = Intent(this, PauseActivity::class.java)
         startActivity(intent)
     }
 
