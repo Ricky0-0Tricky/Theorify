@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +6,7 @@
     android:background="@drawable/page_background"
     android:gravity="center"
     android:padding="16dp"
-    tools:context=".ui.activity.LoginActivity">
+    tools:context=".ui.activity.ManageActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,27 +17,46 @@
         <ImageView
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:src="@drawable/icon_login"/>
-        
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/username_"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:padding="18dp"
-            android:id="@+id/username"/>
+            android:src="@drawable/icon_login"
+            android:id="@+id/profileImage"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="@string/password_"
+            android:text="@string/username_account"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:padding="18dp"
-            android:id="@+id/password"/>
+            android:id="@+id/username"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp">
+
+            <TextView
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="@string/password_account_hidden"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:padding="18dp"/>
+
+            <ImageButton
+                android:id="@+id/password_visibility_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/password_show_btn"
+                android:background="@android:color/transparent"
+                android:src="@drawable/showpassword" />
+
+        </RelativeLayout>
 
         <Button
             android:layout_width="match_parent"

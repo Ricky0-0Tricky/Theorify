@@ -62,13 +62,13 @@ class RegisterActivity : AppCompatActivity (){
     }
 
     /**
-     * Metodo para verificar se ambas as passwords correspondem e possuem um tamanho superior a 6 chars
+     * Metodo para verificar se ambas as passwords correspondem e possuem um tamanho adequado
      */
     fun verifiyPasswords(username : String, password : String, rp_password : String){
         // Verificação se ambas as passwords correspondem
         if(password == rp_password){
-            // Verificação se ambas possuem um tamanho superior a 6 chars
-            if(password.length > 6){
+            // Verificação se ambas possuem um tamanho adequado aos limites delimitados
+            if(password.length >= 4 && password.length <= 8){
                 // Criação do Objeto para posterior envio para a BD
                 val possibleUser : UnregisteredUser = UnregisteredUser(username, password)
                 // Tentativa de Registo do Utilizador
@@ -76,8 +76,8 @@ class RegisterActivity : AppCompatActivity (){
             } else {
                 // Reativa o botão
                 manageButton(true)
-                // Aviso ao Utilizador que as palavras-passe não tem um tamanho superior a 6 chars
-                Toast.makeText(this,"As palavras-passes têm de ter um tamanho superior a 6...", Toast.LENGTH_SHORT).show()
+                // Aviso ao Utilizador que as palavras-passe não cumprem com os requisitos delimitados
+                Toast.makeText(this,"As palavras-passes têm de ter um tamanho mínimo de 4 e máximo de 8...", Toast.LENGTH_SHORT).show()
             }
         } else {
             // Limpeza dos Inputs das Passwords
@@ -94,7 +94,7 @@ class RegisterActivity : AppCompatActivity (){
      * Metodo para tentar registar o utilizador na BD
      */
     fun postUser(possibleUser : UnregisteredUser){
-        val call = RetrofitInitializer().apiService().postUser("", possibleUser)
+        val call = RetrofitInitializer().apiService().postUser("Bearer JYmsOqJpqkWJz5gJlTcF1jkxCl39QAoJYsQDubqZMdg24Hq9B8rjPv2", possibleUser)
         call.enqueue(object : Callback<APIResult> {
             override fun onResponse(call: Call<APIResult>,
                                     response: Response<APIResult>

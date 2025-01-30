@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.gson.Gson
-import com.ricky.theorify.BuildConfig
 import com.ricky.theorify.R
 import com.ricky.theorify.model.APIResult
 import com.ricky.theorify.model.RegisteredUser
@@ -24,7 +23,6 @@ class LoginActivity : AppCompatActivity (){
     lateinit var passwordInput : EditText
     lateinit var loginBtn : Button
     lateinit var switch_register : TextView
-    val keyApi = BuildConfig.bearer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,14 +43,14 @@ class LoginActivity : AppCompatActivity (){
             val password = passwordInput.text.trim().toString().replace("\\s".toRegex(), "")
             // Verificação se os mesmo estão preenchidos
             if(username.isNotBlank() && password.isNotBlank()){
-                // Verificação se a password possui o tamanho mínimo
-                if(password.length > 6){
+                // Verificação se a password está entre o limite delimitado
+                if(password.length >= 4 && password.length <= 8){
                     getUser(username,password)
                 } else {
                     // Reativa o botão
                     manageButton(true)
-                    // Aviso ao Utilizador que a palavra-passe não tem um tamanho superior a 6 chars
-                    Toast.makeText(this,"A palavra-passe tem de ter um tamanho superior a 6...", Toast.LENGTH_SHORT).show()
+                    // Aviso ao Utilizador que a palavra-passe não tem um tamanho adequado
+                    Toast.makeText(this,"A palavra-passe tem de ter um tamanho mínimo de 4 e máximo de 8... ", Toast.LENGTH_SHORT).show()
                 }
             } else {
                 // Reativa o botão
@@ -71,7 +69,7 @@ class LoginActivity : AppCompatActivity (){
      * Metodo de Obtenção do User da BD para autenticação do utilizador
      */
     fun getUser(username : String, password : String){
-        val call = RetrofitInitializer().apiService().getUser(keyApi,username)
+        val call = RetrofitInitializer().apiService().getUser("",username)
         call.enqueue(object : Callback<RegisteredUser> {
             override fun onResponse(call: Call<RegisteredUser>,
                                     response: Response<RegisteredUser>) {
@@ -147,7 +145,7 @@ class LoginActivity : AppCompatActivity (){
      */
     fun goMainPage(){
         // Criação da Nova Atividade
-        val intent = Intent(this, PauseActivity::class.java)
+        val intent = Intent(this, ManageActivity::class.java)
         startActivity(intent)
     }
 
