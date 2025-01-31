@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/page_background"
     android:padding="16dp"
-    tools:context=".ui.activity.RegisterActivity">
+    tools:context=".ui.activity.ToolsActivity">
 
     <LinearLayout
         android:id="@+id/titleTools"

@@ -26,6 +26,11 @@
                 android:value="true" />
         </service>
         <!-- A chave da será escrita no ficheiro 'local.properties'  -->
+
+        <activity
+            android:name=".ui.activity.ToolsActivity"
+            android:exported="false"/>
+
         <activity
             android:name=".ui.activity.ClaveActivity"
             android:exported="false"/>
