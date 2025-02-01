@@ -42,9 +42,6 @@
             android:name=".ui.activity.NoteActivity"
             android:exported="false"/>
         <activity
-            android:name=".ui.activity.InstrumentActivity"
-            android:exported="false"/>
-        <activity
             android:name=".ui.activity.ManageActivity"
             android:exported="false"/>
         <activity
