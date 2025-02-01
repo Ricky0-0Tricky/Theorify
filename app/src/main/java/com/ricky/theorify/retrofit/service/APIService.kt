@@ -5,6 +5,7 @@ import com.ricky.theorify.model.InstrumentNotes
 import com.ricky.theorify.model.InstrumentState
 import com.ricky.theorify.model.RegisteredUser
 import com.ricky.theorify.model.UnregisteredUser
+import com.ricky.theorify.model.isBlocked
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -27,15 +28,15 @@ interface APIService {
     @DELETE("users")
     fun deleteUser(@Header("Authorization") authorization : String, @Query("Username") username : String): Call<APIResult>
 
-    // Pedido GET para receber estado do instrumento segundo UtilizadorID e Name (JSON/BODY)
+    // Pedido GET para receber estado do instrumento segundo UtilizadorID e Name (Parâmetro)
     @GET("instrument")
-    fun getInstrumentState(@Header("Authorization") authorization : String, @Body isBlocked : InstrumentState): Call<InstrumentState>
+    fun getInstrumentState(@Header("Authorization") authorization : String, @Query("UtilizadorID") userID : Int, @Query("Name") instrumentName : String): Call<isBlocked>
 
-    // Pedido PATCH para alterar o isBlocked segundo o UtilizadorID e Name (JSON/BODY)
+    // Pedido PATCH para alterar o isBlocked segundo o UtilizadorID e Name (Parâmetro)
     @PATCH("instrument")
-    fun patchInstrumentState(@Header("Authorization") authorization : String): Call<APIResult>
+    fun patchInstrumentState(@Header("Authorization") authorization : String, @Query("UtilizadorID") userID : Int, @Query("Name") instrumentName : String): Call<APIResult>
 
     // Pedido GET para receber os links das notas segundo o InstrumentName (Parâmetro)
     @GET("notes")
-    fun getNotes(@Header("Authorization") authorization : String, @Query("InstrumentName") instrument : String): Call<InstrumentNotes>
+    fun getNotes(@Header("Authorization") authorization : String, @Query("InstrumentName") instrumentName : String): Call<List<String>>
 }

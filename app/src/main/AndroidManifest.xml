@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -26,11 +26,12 @@
                 android:value="true" />
         </service>
         <!-- A chave da será escrita no ficheiro 'local.properties'  -->
-
+        <activity
+            android:name=".ui.activity.InstrumentActivity"
+            android:exported="false"/>
         <activity
             android:name=".ui.activity.ToolsActivity"
             android:exported="false"/>
-
         <activity
             android:name=".ui.activity.ClaveActivity"
             android:exported="false"/>
@@ -39,6 +40,9 @@
             android:exported="false"/>
         <activity
             android:name=".ui.activity.NoteActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.activity.InstrumentActivity"
             android:exported="false"/>
         <activity
             android:name=".ui.activity.ManageActivity"

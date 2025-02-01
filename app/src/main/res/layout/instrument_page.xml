@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/page_background"
+    android:padding="16dp"
+    tools:context=".ui.activity.InstrumentActivity">
+
+    <TextView
+        android:id="@+id/instrumentos_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/instrumentos_titulo"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="16dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/instrumentos_titulo"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:id="@+id/piano_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:layout_marginBottom="10dp">
+
+                <ImageButton
+                    android:id="@+id/piano_imagem"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/piano"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Piano"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:id="@+id/piano_descricao"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/piano_descricao"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/acustica_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:layout_marginBottom="10dp">
+
+                <ImageButton
+                    android:id="@+id/acustica_imagem"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/acousticguitar"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Guitarra Acústica"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:id="@+id/acustica_descricao"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/guitarra_acustica_descricao"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/eletrica_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:layout_marginBottom="10dp">
+
+                <ImageButton
+                    android:id="@+id/eletrica_imagem"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/electricguitar"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Guitarra Elétrica"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:id="@+id/eletrica_descricao"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/guitarra_eletrica_descricao"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

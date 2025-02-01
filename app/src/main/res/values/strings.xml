@@ -7,8 +7,6 @@
     <string name="rg_password_repeat">Password de Confirmação</string>
     <string name="login">Login</string>
     <string name="register">Registar</string>
-    <string name="username_">Username: pessoa</string>
-    <string name="password_">Password: ......</string>
     <string name="delete_account">Apagar Conta</string>
     <string name="sign_out">Sair</string>
     <string name="login_to_register">Não tens conta? <u>Regista-te aqui!</u></string>
@@ -73,4 +71,8 @@
     <string name="chordexplorer_Name">Explorador de Acordes</string>
     <string name="circleoffifths">CircleofFifths</string>
     <string name="circleoffifths_Name">Círculo de Quintas</string>
+    <string name="instrumentos_titulo">Instrumentos Musicais</string>
+    <string name="piano_descricao">Um piano é um instrumento de teclado versátil e amplamente utilizado que oferece uma rica variedade de sons, tornando-o uma excelente escolha tanto para músicos iniciantes quanto experientes.</string>
+    <string name="guitarra_acustica_descricao">Uma guitarra acústica é um instrumento de cordas popular, conhecido por sua versatilidade, portabilidade e som rico e ressonante.</string>
+    <string name="guitarra_eletrica_descricao">A guitarra elétrica é um instrumento versátil que produz som por meio de captadores eletromagnéticos, que captam a vibração das cordas e a convertem em sinal elétrico.</string>
 </resources>

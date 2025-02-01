@@ -69,17 +69,16 @@ class LoginActivity : AppCompatActivity (){
      * Metodo de Obtenção do User da BD para autenticação do utilizador
      */
     fun getUser(username : String, password : String){
-        val call = RetrofitInitializer().apiService().getUser("",username)
+        val call = RetrofitInitializer().apiService().getUser("Bearer JYmsOqJpqkWJz5gJlTcF1jkxCl39QAoJYsQDubqZMdg24Hq9B8rjPv2",username)
         call.enqueue(object : Callback<RegisteredUser> {
-            override fun onResponse(call: Call<RegisteredUser>,
-                                    response: Response<RegisteredUser>) {
+            override fun onResponse(call: Call<RegisteredUser>, response: Response<RegisteredUser>) {
                 if(response.isSuccessful){
                     response.body()?.let {
                         // Obtenção do Utilizador na BD
                         val user : RegisteredUser = it
                         // Tentativa de Autenticação do Utilizador
                         verifyUser(password,user)
-                }
+                    }
                 } else {
                     // Parsing da messagem de erro
                     val errorMessage  = response.errorBody()?.string()?.let { errorBody ->
@@ -145,7 +144,7 @@ class LoginActivity : AppCompatActivity (){
      */
     fun goMainPage(){
         // Criação da Nova Atividade
-        val intent = Intent(this, ManageActivity::class.java)
+        val intent = Intent(this, InstrumentActivity::class.java)
         startActivity(intent)
     }
 
