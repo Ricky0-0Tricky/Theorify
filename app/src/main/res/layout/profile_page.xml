@@ -1,0 +1,158 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/page_background"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".ui.activity.ManageActivity">
+
+    <LinearLayout
+        android:id="@+id/profile_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/icon_login" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:padding="18dp"
+            android:text="@string/username_account"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp">
+
+            <TextView
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:padding="18dp"
+                android:text="@string/password_account_hidden"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/password_visibility_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/password_show_btn"
+                android:src="@drawable/showpassword" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/delete_account_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32sp"
+            android:backgroundTint="@color/white"
+            android:padding="18dp"
+            android:text="@string/delete_account"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/back_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32sp"
+            android:backgroundTint="@color/white"
+            android:padding="18dp"
+            android:text="@string/sign_out"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/botões_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40px"
+        android:gravity="center"
+        android:layout_below="@+id/profile_Layout"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/note_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:contentDescription="@string/note_button"
+            android:src="@drawable/seminima_button"
+            />
+
+        <ImageButton
+            android:id="@+id/pausa_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:contentDescription="@string/pausa_button"
+            android:src="@drawable/pausa_seminima_button"
+            />
+
+        <ImageButton
+            android:id="@+id/instrumento_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:contentDescription="@string/instrumento_button"
+            android:src="@drawable/acousticguitar_button"
+            />
+
+        <ImageButton
+            android:id="@+id/home_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:contentDescription="@string/home_button"
+            android:src="@drawable/home_button"
+            />
+
+        <ImageButton
+            android:id="@+id/clave_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:contentDescription="@string/clave_button"
+            android:src="@drawable/clave_de_sol_button"
+            />
+
+        <ImageButton
+            android:id="@+id/tools_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:contentDescription="@string/tools_button"
+            android:src="@drawable/tools_button"
+            />
+
+        <ImageButton
+            android:id="@+id/profile_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:contentDescription="@string/profile_button"
+            android:src="@drawable/profile_button"
+            />
+    </LinearLayout>
+
+</RelativeLayout>
