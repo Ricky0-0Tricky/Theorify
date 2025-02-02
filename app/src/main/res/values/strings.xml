@@ -75,6 +75,17 @@
     <string name="piano_descricao">Um piano é um instrumento de teclado versátil e amplamente utilizado que oferece uma rica variedade de sons, tornando-o uma excelente escolha tanto para músicos iniciantes quanto experientes.</string>
     <string name="guitarra_acustica_descricao">Uma guitarra acústica é um instrumento de cordas popular, conhecido por sua versatilidade, portabilidade e som rico e ressonante.</string>
     <string name="guitarra_eletrica_descricao">A guitarra elétrica é um instrumento versátil que produz som por meio de captadores eletromagnéticos, que captam a vibração das cordas e a convertem em sinal elétrico.</string>
+    <string name="Title_Note">Deteção de Notas</string>
+    <string name="descriacaoGeral">Bem Vindos à app Theorify, onde poderás aprender e explorar vários conceitos musicais de forma divertida e interativa.</string>
+    <string name="mainimage">mainImage</string>
+    <string name="note_button">note_button</string>
+    <string name="pausa_button">pausa_button</string>
+    <string name="home_button">home_button</string>
+    <string name="clave_button">clave_button</string>
+    <string name="tools_button">tools_button</string>
+    <string name="profile_button">profile_button</string>
+    <string name="instrumento_button">instrumento_button</string>
+    <string name="logo">logo</string>
     <string name="explorerNotes_title">Explorador de Notas</string>
     <string name="octaveSpin_text">Oitava</string>
     <string name="noteSpin_text">Nota</string>

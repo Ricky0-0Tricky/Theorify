@@ -11,10 +11,10 @@ android {
     compileSdk = 35
 
     // Para ter acesso ao conteúdo do ficheiro local.properties
-    val file = rootProject.file("local.properties")
-    val properties = Properties()
+        val file = rootProject.file("local.properties")
+        val properties = Properties()
     // Carrega o conteúdo para dentro do properties
-    properties.load(FileInputStream(file))
+        properties.load(FileInputStream(file))
 
     defaultConfig {
         applicationId = "com.ricky.theorify"
@@ -50,6 +50,7 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
 }
 
 dependencies {
@@ -65,4 +66,7 @@ dependencies {
     // Implementação do Retrofit para acesso à API
     implementation ("com.squareup.retrofit2:retrofit:2.3.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.3.0")
+    implementation ("be.tarsos.dsp:core:2.5")
+    implementation ("be.tarsos.dsp:jvm:2.5")
+
 }

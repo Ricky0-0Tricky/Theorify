@@ -7,6 +7,7 @@ import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
@@ -24,6 +25,7 @@ class ScaleExplorerActivity: AppCompatActivity() {
     lateinit var scaleSpin : Spinner
     lateinit var playscaleBtn : Button
     lateinit var selectedScaleText : TextView
+    lateinit var backbutton : ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +37,7 @@ class ScaleExplorerActivity: AppCompatActivity() {
         scaleSpin = findViewById(R.id.qualitySpin)
         playscaleBtn = findViewById(R.id.playScaleBtn)
         selectedScaleText = findViewById(R.id.selectedScaleText)
+        backbutton = findViewById(R.id.back_arrowImage)
 
         // Preenchimento do Spinner de notas
         val notes = arrayOf("C", "Dflat", "D", "Dsharp", "E", "F", "Gflat", "G", "Gsharp", "A", "Asharp", "B")
@@ -75,6 +78,11 @@ class ScaleExplorerActivity: AppCompatActivity() {
             } catch (ex : Exception) {
                 Toast.makeText(this, "Ocorreu um Erro!", Toast.LENGTH_LONG).show()
             }
+        }
+
+        backbutton.setOnClickListener{
+            val intent = Intent(this, ToolsActivity::class.java)
+            startActivity(intent)
         }
     }
 

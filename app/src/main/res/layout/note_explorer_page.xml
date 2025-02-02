@@ -8,6 +8,22 @@
     android:padding="16dp"
     tools:context=".ui.activity.NoteExplorerActivity">
 
+    <LinearLayout
+        android:id="@+id/back_arrow_Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/back_arrowImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/mainimage"
+            android:src="@drawable/back_arrow" />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/noteText"
         android:layout_width="wrap_content"
@@ -84,4 +100,5 @@
             android:textStyle="bold"
             android:layout_marginTop="16dp"/>
     </LinearLayout>
+
 </RelativeLayout>

@@ -164,6 +164,78 @@
                 android:textSize="14sp" />
         </TableRow>
 
+        <LinearLayout
+            android:id="@+id/botões_Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80px"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/note_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:contentDescription="@string/note_button"
+                android:src="@drawable/seminima_button"
+                />
+
+            <ImageButton
+                android:id="@+id/pausa_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:contentDescription="@string/pausa_button"
+                android:src="@drawable/pausa_seminima_button"
+                />
+
+            <ImageButton
+                android:id="@+id/instrumento_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:contentDescription="@string/instrumento_button"
+                android:src="@drawable/acousticguitar_button"
+                />
+
+            <ImageButton
+                android:id="@+id/home_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:contentDescription="@string/home_button"
+                android:src="@drawable/home_button"
+                />
+
+            <ImageButton
+                android:id="@+id/clave_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:contentDescription="@string/clave_button"
+                android:src="@drawable/clave_de_sol_button"
+                />
+
+            <ImageButton
+                android:id="@+id/tools_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:contentDescription="@string/tools_button"
+                android:src="@drawable/tools_button"
+                />
+
+            <ImageButton
+                android:id="@+id/profile_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:contentDescription="@string/profile_button"
+                android:src="@drawable/profile_button"
+                />
+        </LinearLayout>
+
     </TableLayout>
 
 </ScrollView>

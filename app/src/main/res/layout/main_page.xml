@@ -1,94 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/page_background"
-    android:gravity="center"
     android:padding="16dp"
-    tools:context=".ui.activity.ManageActivity">
+    tools:context=".ui.activity.MainPageActivity">
 
     <LinearLayout
-        android:id="@+id/profile_Layout"
+        android:id="@+id/about_Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/aboutImage"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/mainimage"
+            android:src="@drawable/about" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mainImage_Layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/profileImage"
+            android:id="@+id/mainImage"
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:src="@drawable/icon_login" />
+            android:contentDescription="@string/mainimage"
+            android:src="@drawable/titletransparent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/descriacaoGeral_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        android:layout_below="@+id/mainImage_Layout"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/username"
-            android:layout_width="match_parent"
+            android:id="@+id/descriacaoGeral"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:padding="18dp"
-            android:text="@string/username_account"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:background="@drawable/rectangle"
+            android:padding="2dp"
+            android:text="@string/descriacaoGeral"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp">
-
-            <TextView
-                android:id="@+id/password"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:padding="18dp"
-                android:text="@string/password_account_hidden"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <ImageButton
-                android:id="@+id/password_visibility_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="8dp"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/password_show_btn"
-                android:src="@drawable/showpassword" />
-
-        </RelativeLayout>
-
-        <Button
-            android:id="@+id/delete_account_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="32sp"
-            android:backgroundTint="@color/white"
-            android:padding="18dp"
-            android:text="@string/delete_account"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/back_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="32sp"
-            android:backgroundTint="@color/white"
-            android:padding="18dp"
-            android:text="@string/sign_out"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/botões_Layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40px"
+        android:layout_marginTop="550px"
         android:gravity="center"
-        android:layout_below="@+id/profile_Layout"
+        android:layout_below="@+id/descriacaoGeral_Layout"
         android:orientation="horizontal">
 
         <ImageButton
@@ -154,5 +134,7 @@
             android:src="@drawable/profile_button"
             />
     </LinearLayout>
+
+
 
 </RelativeLayout>

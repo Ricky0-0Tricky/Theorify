@@ -7,6 +7,8 @@ import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
@@ -22,6 +24,7 @@ class NoteExplorerActivity: AppCompatActivity() {
     lateinit var octaveSpin : Spinner
     lateinit var playnoteBtn : Button
     lateinit var selectedNoteText : TextView
+    lateinit var backbutton : ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +35,7 @@ class NoteExplorerActivity: AppCompatActivity() {
         octaveSpin = findViewById(R.id.octaveSpin)
         playnoteBtn = findViewById(R.id.playNoteBtn)
         selectedNoteText = findViewById(R.id.selectedNoteText)
+        backbutton = findViewById(R.id.back_arrowImage)
 
         // Preenchimento do Spinner de notas
         val notes = arrayOf("C", "Dflat", "D", "Dsharp", "E", "F", "Gflat", "G", "Gsharp", "A", "Asharp", "B")
@@ -67,6 +71,11 @@ class NoteExplorerActivity: AppCompatActivity() {
                 } catch (ex : Exception) {
                     Toast.makeText(this, "Nota não suportada pelo instrumento!", Toast.LENGTH_LONG).show()
                 }
+        }
+
+        backbutton.setOnClickListener{
+            val intent = Intent(this, ToolsActivity::class.java)
+            startActivity(intent)
         }
     }
 

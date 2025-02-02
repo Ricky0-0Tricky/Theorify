@@ -38,6 +38,13 @@ class InstrumentActivity : AppCompatActivity() {
     lateinit var acousticBtn : ImageButton
     lateinit var electricBtn : ImageButton
     private var mediaPlayer: MediaPlayer? = null
+    lateinit var notebutton : ImageButton
+    lateinit var pausabutton : ImageButton
+    lateinit var instrumentobutton : ImageButton
+    lateinit var homebutton : ImageButton
+    lateinit var clavebutton : ImageButton
+    lateinit var toolbutton : ImageButton
+    lateinit var profilebutton : ImageButton
 
     // Bearer da API
     var bearer = BuildConfig.bearer
@@ -50,6 +57,14 @@ class InstrumentActivity : AppCompatActivity() {
         pianoBtn = findViewById(R.id.piano_imagem)
         acousticBtn = findViewById(R.id.acustica_imagem)
         electricBtn = findViewById(R.id.eletrica_imagem)
+        notebutton = findViewById(R.id.note_button)
+        pausabutton = findViewById(R.id.pausa_button)
+        instrumentobutton = findViewById(R.id.instrumento_button)
+        homebutton = findViewById(R.id.home_button)
+        clavebutton = findViewById(R.id.clave_button)
+        toolbutton = findViewById(R.id.tools_button)
+        profilebutton = findViewById(R.id.profile_button)
+
 
         // Criação das Diretórias para as Notas dos Instrumentos
         createInstrumentDirectories(this)
@@ -110,6 +125,36 @@ class InstrumentActivity : AppCompatActivity() {
                 // Volta à página de login caso não exista conectividade
                 exit()
             }
+        }
+
+        notebutton.setOnClickListener{
+            val intent = Intent(this, NoteActivity::class.java)
+            startActivity(intent)
+        }
+
+        pausabutton.setOnClickListener{
+            val intent = Intent(this, PauseActivity::class.java)
+            startActivity(intent)
+        }
+
+        homebutton.setOnClickListener{
+            val intent = Intent(this, MainPageActivity::class.java)
+            startActivity(intent)
+        }
+
+        clavebutton.setOnClickListener{
+            val intent = Intent(this, ClaveActivity::class.java)
+            startActivity(intent)
+        }
+
+        toolbutton.setOnClickListener{
+            val intent = Intent(this, ToolsActivity::class.java)
+            startActivity(intent)
+        }
+
+        profilebutton.setOnClickListener{
+            val intent = Intent(this, ManageActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -504,6 +549,18 @@ class InstrumentActivity : AppCompatActivity() {
         acousticBtn.isClickable = state
         electricBtn.isEnabled = state
         electricBtn.isClickable = state
+        notebutton.isEnabled = state
+        notebutton.isClickable = state
+        pausabutton.isEnabled = state
+        pausabutton.isClickable = state
+        homebutton.isEnabled = state
+        homebutton.isClickable = state
+        clavebutton.isEnabled = state
+        clavebutton.isClickable = state
+        toolbutton.isEnabled = state
+        toolbutton.isClickable = state
+        profilebutton.isEnabled = state
+        profilebutton.isClickable = state
     }
 
     /**

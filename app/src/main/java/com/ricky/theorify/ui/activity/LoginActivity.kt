@@ -149,7 +149,7 @@ class LoginActivity : AppCompatActivity (){
      */
     fun goMainPage(){
         // Criação da Nova Atividade
-        val intent = Intent(this, ToolsActivity::class.java)
+        val intent = Intent(this, MainPageActivity::class.java)
         startActivity(intent)
     }
 
