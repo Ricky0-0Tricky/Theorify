@@ -10,6 +10,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import android.Manifest
+import android.content.Intent
 import com.ricky.theorify.R
 import com.ricky.theorify.recorder.Recorder
 import com.ricky.theorify.player.Player
@@ -26,6 +27,7 @@ class DetectionNoteActivity : AppCompatActivity() {
     private val recorder: Recorder by lazy { Recorder(this) }
     private val player: Player by lazy { Player(this) }
     private lateinit var outputFile: File
+    lateinit var backbutton : ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +36,7 @@ class DetectionNoteActivity : AppCompatActivity() {
         // Captura dos elementos que compõem a página
         micBtn = findViewById(R.id.buttonMic)
         pitch = findViewById(R.id.pitch)
+        backbutton = findViewById(R.id.back_arrowImage)
 
         // Declaração do Ficheiro onde será guardada a gravação
         outputFile = File(filesDir, "recordedAudio.wav")
@@ -41,6 +44,12 @@ class DetectionNoteActivity : AppCompatActivity() {
         // Evento "onClick" do botão de microfone
         micBtn.setOnClickListener {
             checkAudioPermission()
+        }
+
+        // Evento "onClick" do botão de voltar à atividade "ToolsActivity"
+        backbutton.setOnClickListener{
+            val intent = Intent(this, ToolsActivity::class.java)
+            startActivity(intent)
         }
     }
 

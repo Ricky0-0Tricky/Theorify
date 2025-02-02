@@ -50,7 +50,7 @@ class ScaleExplorerActivity: AppCompatActivity() {
                 octaveSpin.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, octaves)
             }
             else -> {
-                val octaves = (2..5).map { it.toString() }
+                val octaves = (2..6).map { it.toString() }
                 octaveSpin.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, octaves)
             }
         }

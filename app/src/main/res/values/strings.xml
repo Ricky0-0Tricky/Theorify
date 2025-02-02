@@ -62,7 +62,7 @@
     <string name="password_account_shown">Password:</string>
     <string name="ferramentas">Ferramentas</string>
     <string name="voicedetection">voicedetection</string>
-    <string name="voicedetection_Name">Deteção de Voz</string>
+    <string name="voicedetection_Name">Manipulação de Voz</string>
     <string name="noteexplorer">noteExplorer</string>
     <string name="exploradornota_Name">Explorador de Nota</string>
     <string name="scaleexplorer_Name">Explorador de Escala</string>
