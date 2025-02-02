@@ -6,9 +6,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.gson.Gson
+import com.ricky.theorify.BuildConfig
 import com.ricky.theorify.R
 import com.ricky.theorify.model.APIResult
 import com.ricky.theorify.model.RegisteredUser
@@ -23,6 +25,9 @@ class LoginActivity : AppCompatActivity (){
     lateinit var passwordInput : EditText
     lateinit var loginBtn : Button
     lateinit var switch_register : TextView
+
+    // Bearer da API
+    var bearer = BuildConfig.bearer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,7 +74,7 @@ class LoginActivity : AppCompatActivity (){
      * Metodo de Obtenção do User da BD para autenticação do utilizador
      */
     fun getUser(username : String, password : String){
-        val call = RetrofitInitializer().apiService().getUser("Bearer JYmsOqJpqkWJz5gJlTcF1jkxCl39QAoJYsQDubqZMdg24Hq9B8rjPv2",username)
+        val call = RetrofitInitializer().apiService().getUser(bearer,username)
         call.enqueue(object : Callback<RegisteredUser> {
             override fun onResponse(call: Call<RegisteredUser>, response: Response<RegisteredUser>) {
                 if(response.isSuccessful){
@@ -144,7 +149,7 @@ class LoginActivity : AppCompatActivity (){
      */
     fun goMainPage(){
         // Criação da Nova Atividade
-        val intent = Intent(this, InstrumentActivity::class.java)
+        val intent = Intent(this, ToolsActivity::class.java)
         startActivity(intent)
     }
 

@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.gson.Gson
+import com.ricky.theorify.BuildConfig
 import com.ricky.theorify.R
 import com.ricky.theorify.model.APIResult
 import com.ricky.theorify.model.UnregisteredUser
@@ -24,6 +25,9 @@ class RegisterActivity : AppCompatActivity (){
     lateinit var rp_passwordInput : EditText
     lateinit var registerBtn : Button
     lateinit var switch_login : TextView
+
+    // Bearer da API
+    var bearer = BuildConfig.bearer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -94,7 +98,7 @@ class RegisterActivity : AppCompatActivity (){
      * Metodo para tentar registar o utilizador na BD
      */
     fun postUser(possibleUser : UnregisteredUser){
-        val call = RetrofitInitializer().apiService().postUser("Bearer JYmsOqJpqkWJz5gJlTcF1jkxCl39QAoJYsQDubqZMdg24Hq9B8rjPv2", possibleUser)
+        val call = RetrofitInitializer().apiService().postUser(bearer, possibleUser)
         call.enqueue(object : Callback<APIResult> {
             override fun onResponse(call: Call<APIResult>,
                                     response: Response<APIResult>

@@ -4,10 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ricky.theorify.R
 
-class MainActivity : AppCompatActivity() {
-
+class CircleofFifthsActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.login_page)
+        setContentView(R.layout.circle_of_fifths_page)
     }
 }

@@ -75,4 +75,20 @@
     <string name="piano_descricao">Um piano é um instrumento de teclado versátil e amplamente utilizado que oferece uma rica variedade de sons, tornando-o uma excelente escolha tanto para músicos iniciantes quanto experientes.</string>
     <string name="guitarra_acustica_descricao">Uma guitarra acústica é um instrumento de cordas popular, conhecido por sua versatilidade, portabilidade e som rico e ressonante.</string>
     <string name="guitarra_eletrica_descricao">A guitarra elétrica é um instrumento versátil que produz som por meio de captadores eletromagnéticos, que captam a vibração das cordas e a convertem em sinal elétrico.</string>
+    <string name="explorerNotes_title">Explorador de Notas</string>
+    <string name="octaveSpin_text">Oitava</string>
+    <string name="noteSpin_text">Nota</string>
+    <string name="playNote_text">Tocar Nota</string>
+    <string name="explorerScales_title">Explorador de Escalas</string>
+    <string name="playScale_text">Tocar Escala</string>
+    <string name="qualitySpin_text">Qualidade da Escala</string>
+    <string name="explorerChords_title">Explorador de Acordes</string>
+    <string name="chordQualitySpin_text">Qualidade do Acorde</string>
+    <string name="playChord_text">Tocar Acorde</string>
+    <string name="playArpeggio_text">Arpeggiar</string>
+    <string name="leftTitle_text">Navegação pela Esquerda</string>
+    <string name="leftDescription_text">Ao mover-se no sentido anti-horário, você está descendo uma quinta perfeita.\nCada novo acorde ou tonalidade que você encontra terá um bemol a mais na sua armadura de clave.</string>
+    <string name="rightDescription_Text">Ao mover-se no sentido horário ao redor do círculo de quintas, você está subindo uma quinta perfeita.\nCada novo acorde ou tonalidade que você encontra terá um sustenido a mais na sua armadura de clave.</string>
+    <string name="rightTitle_text">Navegação pela Direita</string>
+    <string name="circleOfFifthsTitle_text">Círculo das Quintas</string>
 </resources>

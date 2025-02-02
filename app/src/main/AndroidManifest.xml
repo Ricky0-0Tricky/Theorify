@@ -27,6 +27,18 @@
         </service>
         <!-- A chave da será escrita no ficheiro 'local.properties'  -->
         <activity
+            android:name=".ui.activity.CircleofFifthsActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.activity.ChordExplorerActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.activity.ScaleExplorerActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.activity.NoteExplorerActivity"
+            android:exported="false"/>
+        <activity
             android:name=".ui.activity.InstrumentActivity"
             android:exported="false"/>
         <activity

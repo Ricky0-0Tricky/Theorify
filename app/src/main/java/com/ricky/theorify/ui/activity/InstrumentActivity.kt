@@ -9,9 +9,11 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
+import com.ricky.theorify.BuildConfig
 import com.ricky.theorify.R
 import com.ricky.theorify.model.APIResult
 import com.ricky.theorify.model.InstrumentNotes
@@ -37,6 +39,9 @@ class InstrumentActivity : AppCompatActivity() {
     lateinit var electricBtn : ImageButton
     private var mediaPlayer: MediaPlayer? = null
 
+    // Bearer da API
+    var bearer = BuildConfig.bearer
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.instrument_page)
@@ -48,6 +53,9 @@ class InstrumentActivity : AppCompatActivity() {
 
         // Criação das Diretórias para as Notas dos Instrumentos
         createInstrumentDirectories(this)
+
+        // Evento "onBackPressedDispatcher" do telemóvel
+        this.onBackPressedDispatcher.addCallback(this) {}
 
         // Evento "onClick" do botão do piano
         pianoBtn.setOnClickListener {
@@ -109,7 +117,7 @@ class InstrumentActivity : AppCompatActivity() {
      * Metodo de Obtenção do Estado do Instrumento escolhido
      */
     fun getInstrumentState(instrumentState: InstrumentState) {
-        val call = RetrofitInitializer().apiService().getInstrumentState("Bearer JYmsOqJpqkWJz5gJlTcF1jkxCl39QAoJYsQDubqZMdg24Hq9B8rjPv2", instrumentState.UtilizadorID, instrumentState.Name)
+        val call = RetrofitInitializer().apiService().getInstrumentState(bearer, instrumentState.UtilizadorID, instrumentState.Name)
         call.enqueue(object : Callback<isBlocked> {
             override fun onResponse(call: Call<isBlocked>, response: Response<isBlocked>) {
                 if (response.isSuccessful) {
@@ -209,7 +217,7 @@ class InstrumentActivity : AppCompatActivity() {
      * Metodo para desbloquear o instrumento
      */
     fun patchInstrumentState(instrumentState: InstrumentState) {
-        val call = RetrofitInitializer().apiService().patchInstrumentState("Bearer JYmsOqJpqkWJz5gJlTcF1jkxCl39QAoJYsQDubqZMdg24Hq9B8rjPv2", instrumentState.UtilizadorID, instrumentState.Name)
+        val call = RetrofitInitializer().apiService().patchInstrumentState(bearer, instrumentState.UtilizadorID, instrumentState.Name)
         call.enqueue(object : Callback<APIResult> {
             override fun onResponse(call: Call<APIResult>, response: Response<APIResult>) {
                 if (response.isSuccessful) {
@@ -263,7 +271,7 @@ class InstrumentActivity : AppCompatActivity() {
      * Metodo para obtenção dos URLs das notas do instrumento
      */
     fun getNotes(instrumentName: String) {
-        val call = RetrofitInitializer().apiService().getNotes("Bearer JYmsOqJpqkWJz5gJlTcF1jkxCl39QAoJYsQDubqZMdg24Hq9B8rjPv2", instrumentName)
+        val call = RetrofitInitializer().apiService().getNotes(bearer, instrumentName)
         call.enqueue(object : Callback<List<String>> {
             override fun onResponse(call: Call<List<String>>, response: Response<List<String>>) {
                 if (response.isSuccessful) {

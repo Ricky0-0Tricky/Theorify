@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.gson.Gson
+import com.ricky.theorify.BuildConfig
 import com.ricky.theorify.R
 import com.ricky.theorify.model.APIResult
 import com.ricky.theorify.model.RegisteredUser
@@ -27,6 +28,9 @@ class ManageActivity : AppCompatActivity() {
     lateinit var showPasswordBtn : ImageButton
     lateinit var deleteBtn : Button
     lateinit var logoutBtn : Button
+
+    // Bearer da API
+    var bearer = BuildConfig.bearer
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,7 +72,7 @@ class ManageActivity : AppCompatActivity() {
          * Metodo para apagar conta na BD
          */
         fun deleteUser() {
-            val call = RegisteredUser.currentUser?.let { RetrofitInitializer().apiService().deleteUser("", it.Username) }
+            val call = RegisteredUser.currentUser?.let { RetrofitInitializer().apiService().deleteUser(bearer, it.Username) }
             call?.enqueue(object : Callback<APIResult> {
                 override fun onResponse(call: Call<APIResult>,
                                         response: Response<APIResult>
