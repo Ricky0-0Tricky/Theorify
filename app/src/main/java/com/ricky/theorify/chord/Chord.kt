@@ -1,5 +1,6 @@
 package theorify.lib.chord
 
+
 import android.provider.ContactsContract.CommonDataKinds
 import theorify.lib.interfaces.Chordable
 import theorify.lib.note.Note
