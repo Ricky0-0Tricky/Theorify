@@ -33,6 +33,7 @@ import java.net.URL
 
 
 class InstrumentActivity : AppCompatActivity() {
+
     // Declaração dos elementos que compõem a página
     lateinit var pianoBtn : ImageButton
     lateinit var acousticBtn : ImageButton
@@ -127,31 +128,37 @@ class InstrumentActivity : AppCompatActivity() {
             }
         }
 
+        // Evento "onClick" do botão de ir para a atividade "NoteActivity"
         notebutton.setOnClickListener{
             val intent = Intent(this, NoteActivity::class.java)
             startActivity(intent)
         }
 
+        // Evento "onClick" do botão de ir para a atividade "PauseActivity"
         pausabutton.setOnClickListener{
             val intent = Intent(this, PauseActivity::class.java)
             startActivity(intent)
         }
 
+        // Evento "onClick" do botão de ir para a atividade "MainPageActivity"
         homebutton.setOnClickListener{
             val intent = Intent(this, MainPageActivity::class.java)
             startActivity(intent)
         }
 
+        // Evento "onClick" do botão de ir para a atividade "ClaveActivity"
         clavebutton.setOnClickListener{
             val intent = Intent(this, ClaveActivity::class.java)
             startActivity(intent)
         }
 
+        // Evento "onClick" do botão de ir para a atividade "ToolsActivity"
         toolbutton.setOnClickListener{
             val intent = Intent(this, ToolsActivity::class.java)
             startActivity(intent)
         }
 
+        // Evento "onClick" do botão de ir para a atividade "ManageActivity"
         profilebutton.setOnClickListener{
             val intent = Intent(this, ManageActivity::class.java)
             startActivity(intent)

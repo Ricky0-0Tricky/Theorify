@@ -108,6 +108,7 @@ class ChordExplorerActivity: AppCompatActivity() {
             }
         }
 
+        // Evento "onClick" do botão de voltar atividade "ToolsActivity"
         backbutton.setOnClickListener{
             val intent = Intent(this, ToolsActivity::class.java)
             startActivity(intent)

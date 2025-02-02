@@ -80,6 +80,7 @@ class ScaleExplorerActivity: AppCompatActivity() {
             }
         }
 
+        // Evento "onClick" do botão de voltar à atividade "ToolsActivity"
         backbutton.setOnClickListener{
             val intent = Intent(this, ToolsActivity::class.java)
             startActivity(intent)

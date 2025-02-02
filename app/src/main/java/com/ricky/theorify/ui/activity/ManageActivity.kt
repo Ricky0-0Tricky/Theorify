@@ -82,31 +82,37 @@ class ManageActivity : AppCompatActivity() {
             logout()
         }
 
+        // Evento "onClick" do botão de ir para a atividade "NoteActivity"
         notebutton.setOnClickListener{
             val intent = Intent(this, NoteActivity::class.java)
             startActivity(intent)
         }
 
+        // Evento "onClick" do botão de ir para a atividade "PauseActivity"
         pausabutton.setOnClickListener{
             val intent = Intent(this, PauseActivity::class.java)
             startActivity(intent)
         }
 
+        // Evento "onClick" do botão de ir para a atividade "InstrumentActivity"
         instrumentobutton.setOnClickListener{
             val intent = Intent(this, InstrumentActivity::class.java)
             startActivity(intent)
         }
 
+        // Evento "onClick" do botão de ir para a atividade "MainPageActivity"
         homebutton.setOnClickListener{
             val intent = Intent(this, MainPageActivity::class.java)
             startActivity(intent)
         }
 
+        // Evento "onClick" do botão de ir para a atividade "ClaveActivity"
         clavebutton.setOnClickListener{
             val intent = Intent(this, ClaveActivity::class.java)
             startActivity(intent)
         }
 
+        // Evento "onClick" do botão de ir para a atividade "ToolsActivity"
         toolbutton.setOnClickListener{
             val intent = Intent(this, ToolsActivity::class.java)
             startActivity(intent)

@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.gson.Gson
@@ -67,6 +68,10 @@ class LoginActivity : AppCompatActivity (){
         switch_register.setOnClickListener{
             goRegister()
         }
+
+        // Evento "onBackPressedDispatcher" do telemóvel
+        onBackPressedDispatcher.addCallback(this){
+        }
     }
 
     /**
@@ -111,6 +116,7 @@ class LoginActivity : AppCompatActivity (){
                 // Aviso ao Utilizador que ocorreu um erro no ato de autenticação
                 Toast.makeText(this@LoginActivity,t?.toString(),Toast.LENGTH_SHORT).show()
             }
+
         })
     }
 
