@@ -46,7 +46,7 @@ class ToolsActivity: AppCompatActivity(){
         // Evento "onClick" da LinearView de Deteção de Voz
         voiceDetector.setOnClickListener{
             // Criação da Nova Atividade
-            val intent = Intent(this, InstrumentActivity::class.java)
+            val intent = Intent(this, DetectionNoteActivity::class.java)
             startActivity(intent)
         }
 
